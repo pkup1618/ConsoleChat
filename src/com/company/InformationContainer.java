@@ -22,14 +22,7 @@ public class InformationContainer {
 
         if (port < 19000)
         {
-            if (port > 18000)
-            {
-                this.port = port;
-            }
-            else
-            {
-                this.port = 18000;
-            }
+            this.port = Math.max(port, 18000);
         }
         else
         {
@@ -42,23 +35,6 @@ public class InformationContainer {
     }
 
 
-
-    private String lanIP;
-
-    public void updateIp() {
-
-        String ip = GetIpFromSystem();
-
-        if (ip != null)
-            lanIP = ip;
-
-    }
-
-    public String getLanIP() {
-
-        return lanIP;
-    }
-
     public static String GetIpFromSystem() {
 
         try {
@@ -69,16 +45,5 @@ public class InformationContainer {
         }
 
         return null;
-    }
-
-
-    private boolean isWaitingForConnection;
-
-    public void enableWaitingForConnection() {
-        isWaitingForConnection = true;
-    }
-
-    public void disableWaitingForConnection() {
-        isWaitingForConnection = true;
     }
 }
