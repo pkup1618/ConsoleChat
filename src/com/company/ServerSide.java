@@ -32,9 +32,8 @@ public class ServerSide extends ChatSideBase {
 
 
             in = socket.getInputStream();
-            System.out.println(in.getClass());
             out = socket.getOutputStream();
-            System.out.println(out.getClass());
+
         }
         catch(IOException e) {
             e.printStackTrace();
