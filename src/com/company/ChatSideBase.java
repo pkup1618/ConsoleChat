@@ -4,13 +4,19 @@ import java.io.*;
 import java.util.Scanner;
 
 
+/**
+ * Общее между клиентской и серверной частями программы общения
+ */
 public abstract class ChatSideBase {
 
     protected InputStream in;
     protected OutputStream out;
 
 
-    void createThreads() {
+    /**
+     * Создание потоков для отправки и принятия сообщений
+     */
+    protected void createThreads() {
 
         Thread inThread = new Thread(() -> {
 
