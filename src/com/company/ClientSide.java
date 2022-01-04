@@ -2,7 +2,9 @@ package com.company;
 
 import java.net.Socket;
 
-
+/**
+ * Клиентская часть программы (Singleton)
+ */
 public class ClientSide extends ChatSideBase {
 
     private static ClientSide uniqueInstance;
@@ -14,7 +16,11 @@ public class ClientSide extends ChatSideBase {
         return uniqueInstance;
     }
 
-
+    /**
+     * Подключиться к серверу
+     * @param host ip-адрес
+     * @param port порт
+     */
     public void provideSocketConnection(String host, int port) {
 
         try {

@@ -4,7 +4,11 @@ import javax.swing.*;
 import java.awt.*;
 
 
+/**
+ * Класс, отвечающий за пользовательский интерфейс, нужный для запуска чата
+ */
 public class AppGui {
+
 
     public Button checkIpButton = new Button("Узнать ip компьютера");
     public Button setPortButton = new Button("Установить порт");
@@ -13,6 +17,9 @@ public class AppGui {
     public JLabel portLabel = new JLabel("Порт не установлен");
     public JLabel ipLabel = new JLabel("IP не инициализирован");
 
+    /**
+     * Запускает инициализацию пользовательского интерфейса приложения
+     */
     public void createGUI() {
 
 

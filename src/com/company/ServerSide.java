@@ -4,6 +4,10 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+
+/**
+ * Серверная часть программы часть программы (Singleton)
+ */
 public class ServerSide extends ChatSideBase {
 
     private static ServerSide uniqueInstance;
@@ -16,6 +20,10 @@ public class ServerSide extends ChatSideBase {
     }
 
 
+    /**
+     * Начать ожидание клиента
+     * @param port порт
+     */
     public void provideSocketConnection(int port) {
         try {
             ServerSocket serverSocket = new ServerSocket(port);
@@ -24,7 +32,9 @@ public class ServerSide extends ChatSideBase {
 
 
             in = socket.getInputStream();
+            System.out.println(in.getClass());
             out = socket.getOutputStream();
+            System.out.println(out.getClass());
         }
         catch(IOException e) {
             e.printStackTrace();
