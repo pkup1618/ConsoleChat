@@ -1,5 +1,3 @@
-package com.company;
-
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;

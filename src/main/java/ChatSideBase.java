@@ -1,5 +1,3 @@
-package com.company;
-
 import java.io.*;
 import java.util.Scanner;
 
@@ -8,10 +6,8 @@ import java.util.Scanner;
  * Общее между клиентской и серверной частями программы общения
  */
 public abstract class ChatSideBase {
-
     protected InputStream in;
     protected OutputStream out;
-
 
     /**
      * Создание потоков для отправки и принятия сообщений
