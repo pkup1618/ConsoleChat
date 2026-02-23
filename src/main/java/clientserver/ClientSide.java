@@ -1,12 +1,14 @@
+package clientserver;
+
 import java.net.Socket;
 
-/**
- * Клиентская часть программы (Singleton)
- */
-public class ClientSide extends ChatSideBase {
 
+public class ClientSide extends ChatSideBase {
     private static ClientSide uniqueInstance;
-    private ClientSide() {}
+
+    private ClientSide() {
+    }
+
     public static ClientSide getInstance() {
         if (uniqueInstance == null) {
             uniqueInstance = new ClientSide();
@@ -14,21 +16,13 @@ public class ClientSide extends ChatSideBase {
         return uniqueInstance;
     }
 
-    /**
-     * Подключиться к серверу
-     * @param host ip-адрес
-     * @param port порт
-     */
     public void provideSocketConnection(String host, int port) {
-
-        try {
-            Socket socket = new Socket(host, port);
+        try (Socket socket = new Socket(host, port)) {
             System.out.println("Вы подключились к серверу чата");
 
             in = socket.getInputStream();
             out = socket.getOutputStream();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         createThreads();

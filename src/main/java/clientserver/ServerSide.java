@@ -1,15 +1,16 @@
-import java.io.*;
+package clientserver;
+
+import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 
-/**
- * Серверная часть программы часть программы (Singleton)
- */
 public class ServerSide extends ChatSideBase {
-
     private static ServerSide uniqueInstance;
-    private ServerSide() {}
+
+    private ServerSide() {
+    }
+
     public static ServerSide getInstance() {
         if (uniqueInstance == null) {
             uniqueInstance = new ServerSide();
@@ -17,26 +18,20 @@ public class ServerSide extends ChatSideBase {
         return uniqueInstance;
     }
 
-
-    /**
-     * Начать ожидание клиента
-     * @param port порт
-     */
     public void provideSocketConnection(int port) {
-        try {
-            ServerSocket serverSocket = new ServerSocket(port);
+        try (ServerSocket serverSocket = new ServerSocket(port)) {
             Socket socket = serverSocket.accept();
             System.out.println("Собеседник подключился");
 
-
             in = socket.getInputStream();
             System.out.println(in.getClass());
+
             out = socket.getOutputStream();
             System.out.println(out.getClass());
+        } catch (IOException e) {
+
         }
-        catch(IOException e) {
-            e.printStackTrace();
-        }
+
         createThreads();
     }
 }

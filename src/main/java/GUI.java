@@ -2,12 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 
 
-/**
- * Класс, отвечающий за пользовательский интерфейс, нужный для запуска чата
- */
-public class AppGui {
-
-
+public class GUI {
     public Button checkIpButton = new Button("Узнать ip компьютера");
     public Button setPortButton = new Button("Установить порт");
     public Button startServerButton = new Button("Начать ожидать соединение с клиентом");
@@ -15,15 +10,11 @@ public class AppGui {
     public JLabel portLabel = new JLabel("Порт не установлен");
     public JLabel ipLabel = new JLabel("IP не инициализирован");
 
-    /**
-     * Запускает инициализацию пользовательского интерфейса приложения
-     */
+
     public void createGUI() {
-
-
         JFrame frame = new JFrame("Программа для общения через консоль");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setPreferredSize(new Dimension(1280, 720 ));
+        frame.setPreferredSize(new Dimension(1280, 720));
 
         JPanel contents = new JPanel();
         contents.add(checkIpButton);
@@ -38,6 +29,5 @@ public class AppGui {
 
         frame.pack();
         frame.setVisible(true);
-
     }
 }

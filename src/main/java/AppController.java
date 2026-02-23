@@ -1,24 +1,19 @@
+import clientserver.ClientSide;
+import clientserver.ServerSide;
+
 import javax.swing.*;
 
-/**
- * Корень всего приложения
- */
+
 public class AppController {
 
-    /**
-     * Инициализировать приложение
-     * @param args - оставить пустым
-     */
     public static void main(String[] args) {
-
-        // Прогрузка всех компонентов программы
+        // Загрузка всех компонентов программы
         InformationContainer informationContainer = InformationContainer.getInstance();
         ServerSide serverSide = ServerSide.getInstance();
         ClientSide clientSide = ClientSide.getInstance();
 
-        AppGui gui = new AppGui();
+        GUI gui = new GUI();
         gui.createGUI();
-
 
         gui.ipLabel.setText("ip этого компьютера в локальной сети: " + InformationContainer.GetIpFromSystem());
 

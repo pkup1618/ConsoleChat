@@ -1,21 +1,15 @@
+package clientserver;
+
 import java.io.*;
 import java.util.Scanner;
 
 
-/**
- * Общее между клиентской и серверной частями программы общения
- */
 public abstract class ChatSideBase {
     protected InputStream in;
     protected OutputStream out;
 
-    /**
-     * Создание потоков для отправки и принятия сообщений
-     */
     protected void createThreads() {
-
         Thread inThread = new Thread(() -> {
-
             BufferedReader reader = new BufferedReader(new InputStreamReader(in));
             String message;
 
@@ -26,8 +20,7 @@ public abstract class ChatSideBase {
                         System.out.println("Получено сообщение: " + message);
                     }
                 }
-            }
-            catch(IOException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         });
