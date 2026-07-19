@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="RunClient" type="JetRunConfigurationType">
+    <envs>
+      <env name="side" value="client" />
+      <env name="sp" value="56783" />
+    </envs>
+    <option name="MAIN_CLASS_NAME" value="com.company.InitializersKt" />
+    <module name="Console_Chat" />
+    <shortenClasspath name="NONE" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
